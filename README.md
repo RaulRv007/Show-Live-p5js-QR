@@ -1,70 +1,158 @@
-# 📱 Live Preview QR for VS Code
+# 📱 Live Preview QR — Instantly View Your Web Project on Your Phone
 
-Easily preview your local web project on your phone!  
-This extension generates a QR code pointing to your `Live Server` URL, so you can instantly open your project from any device on the same WiFi.
+**Live Preview QR** is a simple yet powerful Visual Studio Code extension that helps you preview your local web projects (like p5.js sketches) on any device connected to the same WiFi — using a QR code.
 
-Perfect for testing **p5.js sketches**, web animations, or any frontend project.
-
----
-
-## ✨ Features
-
-- Detects your local IP address
-- Defaults to `http://<local-ip>:5500/index.html`
-- Option to customize port and file name
-- Detects if **Live Server** is running
-- Displays QR code in the **terminal as ASCII**
+Just start your Live Server, run the command, scan the QR code with your phone, and you're in! 🪄
 
 ---
 
-## 📦 Installation (Locally)
+## 🌟 Features
 
-```bash
-npm install -g vsce
-vsce package
-code --install-extension live-preview-qr-0.0.1.vsix
-´´´
-
-Scan it with your phone camera – boom! Preview your project.
-
----
-
-## ⚙️ Usage
-
-1. Make sure [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) is running
-2. Run command: `Show Live Preview QR`
-   - Use the Command Palette: `Ctrl+Shift+P` → search `"Show Live Preview QR"`
-3. Scan the QR code with your phone
-4. ✨ Done!
+- 🔍 **Auto-detects Live Server status**
+- 🌐 **Detects your local IP** for network access
+- 📄 **Custom file and port input** (with smart defaults)
+- 🧠 **Smart defaults**: `index.html` + port `5500`
+- 🧾 **ASCII QR Code in terminal** – no GUI needed
+- 🧪 Perfect for testing **p5.js**, **HTML/CSS/JS**, or **frontend frameworks**
 
 ---
 
-## 🧩 Optional Config
+## 🎯 Why This Extension?
 
-When prompted, you can enter:
-- Custom **port** (default is `5500`)
-- Custom **filename** (default is `index.html`)
+Developers often want to quickly see how their web projects behave on mobile devices without deploying to the web. This extension bridges that gap by providing a live network preview via QR code.
 
----
-
-## 💡 Why Use This?
-
-- Instantly test responsive layouts
-- Share your sketch with a friend nearby
-- Quickly debug p5.js or Three.js sketches on your phone
-- Demo your frontend project without deploying it
+Ideal use cases:
+- Preview **responsive designs** on your phone
+- Test **touch interaction**
+- Share your local prototype with others nearby
+- Demo **p5.js sketches** in class, events, or meetups
 
 ---
 
-## 🛠 Requirements
+## ⚙️ Installation
+
+### 👉 Via VSIX (Local Install)
+
+1. Install VSCE if you haven't:
+   ```bash
+   npm install -g vsce
+   ```
+
+2. Package the extension:
+   ```bash
+   vsce package
+   ```
+
+3. Install it in VS Code:
+   ```bash
+   code --install-extension live-preview-qr-0.0.1.vsix
+   ```
+
+Or install manually in VS Code:
+- Open **Extensions view**
+- Click the `...` menu (top-right)
+- Select **"Install from VSIX..."**
+- Choose the `.vsix` file
+
+---
+
+## 🚀 Usage
+
+1. Open your web project (HTML/JS/p5.js/etc.)
+2. Start **Live Server** (if not running)
+3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS)
+4. Search and run: `Show Live Preview QR`
+5. When prompted:
+   - Enter a custom **port** (or press Enter to use `5500`)
+   - Enter a custom **filename** (or press Enter to use `index.html`)
+6. Scan the QR code displayed in the **terminal** with your phone
+
+✅ Your project opens instantly!
+
+---
+
+## 🧠 Default Behavior
+
+| Setting      | Default     |
+|--------------|-------------|
+| Port         | `5500`      |
+| File         | `index.html` |
+
+No config needed if you're using Live Server with standard settings.
+
+---
+
+## 🔐 Requirements
 
 - [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-- All devices (phone + computer) must be on the **same WiFi network**
+- All devices (computer & phone) must be connected to the **same WiFi**
 
 ---
 
-## 📦 Installing Locally
+## 📌 Example Output
 
 ```bash
-vsce package
-code --install-extension live-preview-qr-0.0.1.vsix
+🌐 Live Server detected!
+🔎 Detected local IP: 192.168.1.42
+📁 Serving file: index.html
+🔢 Port: 5500
+🌍 URL: http://192.168.1.42:5500/index.html
+
+📱 Scan this QR code with your phone camera to preview:
+███▀▀▀█ ▄▄▄ █ ▄▄ ▄▀█ ...
+██ ▄█ ▀ ▀▄█▄▀█ █ ▀█ █
+...
+```
+
+---
+
+## 🛠 Troubleshooting
+
+### ⚠️ Can’t detect Live Server?
+Make sure:
+- You’ve started Live Server (`index.html` should be open in the browser)
+- You’re not using a custom server port without updating the input
+
+### 🛜 QR not working on phone?
+- Ensure your phone is on the **same WiFi** as your computer
+- Try accessing the IP/URL manually in your phone’s browser
+
+---
+
+## 🧩 Extension Commands
+
+- `Show Live Preview QR`: Main command to generate and show QR code
+- Accepts optional port and file input
+- Always displays QR in **terminal** as ASCII (GUI support planned)
+
+---
+
+## ✨ Future Features (Planned)
+
+- GUI QR panel popup
+- Automatic QR refresh when Live Server URL changes
+- QR code copy to clipboard
+
+---
+
+## 👨‍💻 Contributing
+
+Contributions welcome!  
+Feel free to open an issue, submit a feature request, or fork and PR!
+
+---
+
+## 📃 License
+
+[MIT License](LICENSE)
+
+---
+
+## 💬 Feedback
+
+Found a bug? Have an idea?  
+Open an issue or reach out — your feedback is super valuable!
+
+---
+
+Made with ❤️ to help developers preview smarter.
